@@ -88,3 +88,97 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
+:root {
+  /* Colors */
+  --clr-dark: 0 0% 10%;
+  --clr-green-base: 120 80% 50%;
+  --clr-green-dark: 120 80% 40%;
+  --clr-green-light: 120 80% 60%;
+  --clr-green-lighter: 120 80% 70%;
+
+  /* font-sizes */
+  --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+  --fs-800: 3.5rem;
+  --fs-700: 2rem;
+  --fs-600: 1.5rem;
+  --fs-500: 1.25rem;
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
+  --fs-200: 0.75rem;
+}
+
+body {
+  background-color: hsl(var(--clr-dark));
+}
+
+.board {
+  min-width: 20rem;
+  min-height: 20rem;
+}
+
+.tile {
+  cursor: pointer;
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border: 2px solid hsl(var(--clr-green-base));
+  color: hsl(var(--clr-green-base));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 600px) {
+  .tile {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.tile-letter {
+  font-size: var(--fs-700);
+}
+
+.tile-points {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.15rem 0.3rem;
+  font-size: var(--fs-200);
+}
+
+.tile-holder {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5em;
+}
+
+.item-holder {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5em;
+}
+
+.item {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border: 2px solid hsl(var(--clr-green-base));
+  color: hsl(var(--clr-green-base));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+}
